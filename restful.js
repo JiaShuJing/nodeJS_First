@@ -33,6 +33,8 @@ app.get('/addUser', function (req, res) {
     });
 })
 
+
+
 //获取指定id的用户
 app.get('/:id', function (req, res) {
     // 首先我们读取已存在的用户
@@ -44,7 +46,8 @@ app.get('/:id', function (req, res) {
     });
 })
 
-//删除用户
+//删除用户   undefine  why...  调整到上边就不报错了。。。
+
 var id = 2;
 
 app.get('/deleteUser', function (req, res) {
@@ -53,11 +56,11 @@ app.get('/deleteUser', function (req, res) {
     fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
         data = JSON.parse( data );
         delete data["user" + 2];
+
         console.log( data );
         res.end( JSON.stringify(data));
     });
 })
-
 
 var server = app.listen(8081, function () {
 

@@ -3,7 +3,7 @@
  * http://blog.csdn.net/pretent/article/details/45204909 cookie和session
  */
 var express = require('express');
-var util=require('util');
+// var util=require('util');
 var cookieParser = require('cookie-parser');
 var app = express();
 app.use(cookieParser());
